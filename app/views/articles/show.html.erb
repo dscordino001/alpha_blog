@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AlphaBlog Show Article Details</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+
+<body>
+    <header>
+        <%# You need the = to say display it to the screen %>
+        <h1>Show Article Details of Article with ID: <%= @article.id%></h1>
+        <p><strong>Title: </strong><%= @article.title%></p>
+        <p><strong>Description: </strong><%= @article.description%></p>
+    </header>
+</body>
+</html>
