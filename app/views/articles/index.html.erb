@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AlphaBlog Show All Articles</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+
+<body>
+    <header>
+        <h1>Articles Listed Page</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @articles.each do |article| %>
+                    <tr>
+                        <td><%= article.id%></td>
+                        <td><%= article.title%></td>
+                        <td><%= article.description%></td>
+                        <td>Placeholder</td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </header>
+</body>
+</html>
