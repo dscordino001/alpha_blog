@@ -8,4 +8,12 @@ class ArticlesController < ApplicationController
     # code to grab all of the articles from the articles table
     @articles = Article.all
   end
+  def new
+
+  end
+  def create
+    # this line will render plain text of the params that are passed in to the screen
+    # :article is the part of the params hash that we want to render
+    render plain: params[:article]
+  end
 end

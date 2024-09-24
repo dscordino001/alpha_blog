@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AlphaBlog Create New Article</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+
+<body>
+    <header>
+        <%# You need the = to say display it to the screen %>
+        <h1>Create New Article</h1>
+        <%# 
+        scope = defines scope/model you're working with. Needs to be a symbol
+        url = specifies where this form gets submitted to 
+        articles_path = /articles
+        local helps you use normal HTTP post rather than posting through AJAX 
+        %>
+        <%= form_with scope: :article, url: articles_path, local: true do |f|%>
+            <p>
+                <%= f.label :title%></br>
+                <%= f.text_field :title%></br>
+            </p>
+            <p>
+                <%= f.label :description%></br>
+                <%= f.text_area :description%></br>
+            </p>
+            <p>
+                <%= f.submit %></br>
+            </p>
+        <% end %>
+    </header>
+</body>
+</html>
