@@ -9,11 +9,19 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
   def new
-
+    # need to instantiate an article so the form can be created
+    @article = Article.new
   end
   def create
-    # this line will render plain text of the params that are passed in to the screen
-    # :article is the part of the params hash that we want to render
-    render plain: params[:article]
+    # you need to whitelist the fields you want to have come in from the internet to the database
+    # you require an article object with permitted keys of title and description
+    @article = Article.new(params.require(:article).permit(:title, :description))
+    if @article.save
+      flash[:notice] = "Article was created successfully."
+      redirect_to article_path(@article)
+    else
+      # if the article doesn't save, we want to render the new template again
+      render 'new'
+    end
   end
 end
